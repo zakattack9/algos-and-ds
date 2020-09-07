@@ -1,6 +1,6 @@
 import Queue from './queue.js';
 import Stack from './stack.js';
-import BinaryTreeNode, { buildBinaryTree } from './binarytreenode.js';
+import { buildBinaryTree } from './binarytreenode.js';
 
 let queue = new Queue([1, 2, 3]);
 console.log(queue.pop())

@@ -13,9 +13,11 @@ JavaScript implementations of various algorithms and data structures
 
 #### Searching
 - [Depth-first Search](https://github.com/zakattack9/algos-and-ds/blob/master/algorithms/dfs.js)
-  - O(#vertices + #edges)
+  - Tree Traversal: O(n) *(where n is #edges or #nodes - 1)*
+  - Graph Traversal: O(#vertices + #edges)
 - [Breadth-first Search](https://github.com/zakattack9/algos-and-ds/blob/master/algorithms/bfs.js)
-  - O(#vertices + #edges)
+  - Tree Traversal: O(n) *(where n is #edges or #nodes - 1)*
+  - Graph Traversal: O(#vertices + #edges)
 - [Binary Search](https://github.com/zakattack9/algos-and-ds/blob/master/algorithms/binarysearch.js)
   - O(log(n))
 
@@ -54,4 +56,3 @@ JavaScript implementations of various algorithms and data structures
   - Search: Θ(n) | O(n)
   - Insertion: Θ(1) | O(1)
   - Deletion: Θ(1) | O(1)
-  

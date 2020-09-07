@@ -12,6 +12,7 @@ export default class BinaryTreeNode {
 
 // arr must be level ordered
 export const buildBinaryTree = (arr, i = 0, root = null) => {
+  if (!arr) return [];
   if (i < arr.length) {
     root = new BinaryTreeNode(arr[i]);
     // console.log(arr[i], "ROOT", root, "LEFT", arr[2*i+1], "RIGHT", arr[2*i+2]);
