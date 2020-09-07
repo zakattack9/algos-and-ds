@@ -1,0 +1,21 @@
+{
+  "name": "algos-and-ds",
+  "version": "1.0.0",
+  "description": "JavaScript implementations of various algorithms and data structures",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zakattack9/algos-and-ds.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zakattack9/algos-and-ds/issues"
+  },
+  "homepage": "https://github.com/zakattack9/algos-and-ds#readme",
+  "type": "module"
+}
