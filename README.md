@@ -2,10 +2,14 @@ JavaScript implementations of various algorithms and data structures
 
 ### Algorithms
 #### Sorting
-- Quick Sort      (Ω: nlog(n) | Θ: nlog(n) | O: n^2)
-- Merge Sort      (Ω: nlog(n) | Θ: nlog(n) | O: nlog(n))
-- Insertion Sort  (Ω: n       | Θ: n^2     | O: n^2)
-- Heap Sort       (Ω: nlog(n) | Θ: nlog(n) | O: nlog(n))
+- Quick Sort
+  - (Ω: nlog(n) | Θ: nlog(n) | O: n^2)
+- Merge Sort
+  - (Ω: nlog(n) | Θ: nlog(n) | O: nlog(n))
+- Insertion Sort
+  - (Ω: n       | Θ: n^2     | O: n^2)
+- Heap Sort
+  - (Ω: nlog(n) | Θ: nlog(n) | O: nlog(n))
 
 #### Searching
 - Depth-first Search
