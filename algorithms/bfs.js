@@ -18,7 +18,6 @@ const BFS = (root) => {
 
   return traversal;
 }
-
 export default BFS;
 
 // returns only rightmost nodes at each tree level
