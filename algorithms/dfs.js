@@ -14,7 +14,6 @@ export default DFS;
 export const DFSPreOrder = (root, traversal = []) => {
   if (!root) return traversal;
 
-  console.log(traversal)
   traversal.push(root.value);
   DFSPreOrder(root.left, traversal);
   DFSPreOrder(root.right, traversal);
@@ -32,3 +31,7 @@ export const DFSPostOrder = (root, traversal = []) => {
 
   return traversal;
 }
+
+// export const DFSRightSide = (root, traversal = []) => {
+
+// }
