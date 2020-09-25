@@ -1,5 +1,5 @@
 // Given an array of integers and an integer k, return the pair that adds up to k, assuming there exists only a unique solution
-function findPair(arr, k) {
+const findPair = (arr, k) => {
   let hashmap = {};
   arr.forEach(val => hashmap[val] = ++hashmap[val] || 1);
 
@@ -16,7 +16,7 @@ function findPair(arr, k) {
 }
 
 // Given two strings of equal length, find the minimum number of characters that would need to be changed on both such that they can be anagrams of each other
-function findAnagram(strA, strB) {
+const findAnagram = (strA, strB) => {
   let hashmap = {};
   let numToDelete = 0;
   
@@ -34,4 +34,15 @@ function findAnagram(strA, strB) {
   });
   
   return numToDelete;
+}
+
+// Determine if a given palindrome is valid
+const isPalindrome = (str) => {
+  if (str.length <= 1) return true;
+  
+  if (str.charAt(0) !== str.charAt(str.length -1)) {
+    return false;
+  }
+  
+  return isPalindrome(str.slice(1, str.length - 1));
 }
