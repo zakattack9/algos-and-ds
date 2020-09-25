@@ -16,8 +16,8 @@ const Partition = (arr, low, high) => {
     } 
   }
 
-  swap(arr, i + 1, high);
-  return i + 1;
+  swap(arr, ++i, high);
+  return i;
 }
 
 const swap = (arr, firstIndex, secondIndex) => {
