@@ -1,4 +1,5 @@
 import Quicksort from './quicksort.js';
+import Mergesort from './mergesort.js';
 
 import { buildBinaryTree } from '../data-structures/binarytreenode.js';
 import BFS, { BFSRightSide, BFSLeftSide } from './bfs.js';
@@ -12,6 +13,10 @@ console.log('UNSORTED ARRAY', UNSORTED_ARR);
 const quicksortArr = [...UNSORTED_ARR];
 Quicksort(quicksortArr, 0, quicksortArr.length - 1);
 console.log('QUICKSORT', quicksortArr);
+
+const mergesortArr = [...UNSORTED_ARR];
+const sortedArr = Mergesort(mergesortArr);
+console.log('MERGESORT', sortedArr);
 
 // tree traversals
 const root = buildBinaryTree(UNSORTED_ARR);
