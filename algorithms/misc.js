@@ -1,6 +1,6 @@
 // Given an array of integers and an integer k, return the pair that adds up to k, assuming there exists only a unique solution
 // Hashmap solution in O(n)
-const findPair = (arr, k) => {
+export const findPair = (arr, k) => {
   let hashmap = {};
   arr.forEach(val => hashmap[val] = ++hashmap[val] || 1);
 
@@ -18,7 +18,7 @@ const findPair = (arr, k) => {
 
 // Given two strings of equal length, find the minimum number of characters that would need to be changed on both such that they can be anagrams of each other
 // Hashmap solution in O(k) where k is the length of strA + strB - (strA ∩ strB) (all chars of strA and strB without duplicate chars)
-const findAnagram = (strA, strB) => {
+export const findAnagram = (strA, strB) => {
   let hashmap = {};
   let numToDelete = 0;
 
@@ -40,7 +40,7 @@ const findAnagram = (strA, strB) => {
 
 // Determine if a given palindrome is valid
 // Recursive solution in O(n)
-const isPalindrome = (str) => {
+export const isPalindrome = (str) => {
   if (str.length <= 1) return true;
 
   if (str.charAt(0) !== str.charAt(str.length - 1)) {
@@ -51,19 +51,19 @@ const isPalindrome = (str) => {
 }
 
 // Check if a string has a repeated substring (e.g. "abab" = true, "aba" = false, "abcabc" = false)
-// Solution using KMP pattern searching in O(n * m) where n is the length of string s and m is the length of the repeated substring
-const repeatedSubstringPattern = (s) => {
+// Solution using KMP pattern searching in O(n * m) where n is the length of the string and m is the length of the repeated substring
+export const repeatedSubstringPattern = (str) => {
   let dp = [0]
-  for (let i = 1; i < s.length; i++) {
+  for (let i = 1; i < str.length; i++) {
     let j = dp[i - 1];
-    while (j > 0 && s[i] !== s[j]) {
+    while (j > 0 && str[i] !== str[j]) {
       j = dp[j - 1];
     }
-    if (s[i] === s[j]) {
+    if (str[i] === str[j]) {
       j++;
     }
     dp[i] = j;
   }
-  const l = dp[s.length - 1];
-  return l !== 0 && s.length % (s.length - l) === 0;
+  const l = dp[str.length - 1];
+  return l !== 0 && str.length % (str.length - l) === 0;
 };
