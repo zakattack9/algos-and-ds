@@ -67,3 +67,12 @@ export const repeatedSubstringPattern = (str) => {
   const l = dp[str.length - 1];
   return l !== 0 && str.length % (str.length - l) === 0;
 };
+
+// Given an array arr, shift the contents of arr to the left d times
+// Solution using splice running in O(n)
+export const shiftArr = (arr, d) => {
+  const shiftAmount = d % arr.length;
+  const numToRemove = arr.length - shiftAmount;
+  let head = arr.splice(shiftAmount, numToRemove);
+  return head.concat(arr);
+}
