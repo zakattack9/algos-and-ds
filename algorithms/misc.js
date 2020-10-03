@@ -68,6 +68,15 @@ export const repeatedSubstringPattern = (str) => {
   return l !== 0 && str.length % (str.length - l) === 0;
 };
 
+// Given an array arr, shift the contents of arr to the left d times
+// Solution using splice running in O(n)
+export const shiftArr = (arr, d) => {
+  const shiftAmount = d % arr.length;
+  const numToRemove = arr.length - shiftAmount;
+  let head = arr.splice(shiftAmount, numToRemove);
+  return head.concat(arr);
+}
+
 // Given an array check if at any index i, the sum of numbers to the left of i is equal to the sum of numbers to the right of i where i is exclusive of both left and right sum calculations; return 1 if there exists such index, else return 0
 // e.g. given [1, 2, 3, 9, 4, 2] at index 3 the left sum of numbers is 6 (1 + 2 + 3) and the right sum of numbers is also 6 (4 + 2)
 // e.g. input: [1, 2, 3, 0, 4, 2] => output: 1; input: [1, 3, 4, 3] => output: 0
