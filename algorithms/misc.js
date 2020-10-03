@@ -88,6 +88,8 @@ export const isBalanced = (arr) => { // GoDaddy
 // Given an array of strings, for each string compare all suffixes (including the original string) with the original string and return a count for the number of equal characters both the suffix and the original string have have in order. See examples.
 // e.g. ["ababaa"] => "ababaa" (6), "babaa" (0), "abaa" (3), "baa" (0), "aa" (1), "a" (1) => 6 + 0 + 3 + 0 + 1 + 1 = 11
 // where 6, 0, 3, 0, 1, 1 are the number of equal characters that both the original string ("ababaa") and the current suffix string ("ababaa", "babaa", ...) have in order.
+// furthermore, "ababaa" and "abaa" results in 3 because both strings start with the common substring of "aba" which is of length 3
+// additionally, "ababaa" and "babaa" results in 0 because neither string starts with a common substring thus the common substring is of length 0
 // e.g. ["aa"] => "aa" (2), "a" (1) => 2 + 1 = 3
 // e.g. input: ["ababaa", "aa"] => output: [11, 3]
 export const findEqualChars = (arr) => { // GoDaddy
