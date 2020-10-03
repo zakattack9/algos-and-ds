@@ -67,3 +67,43 @@ export const repeatedSubstringPattern = (str) => {
   const l = dp[str.length - 1];
   return l !== 0 && str.length % (str.length - l) === 0;
 };
+
+// Given an array check if at any index i, the sum of numbers to the left of i is equal to the sum of numbers to the right of i where i is exclusive of both left and right sum calculations; return 1 if there exists such index, else return 0
+// e.g. given [1, 2, 3, 9, 4, 2] at index 3 the left sum of numbers is 6 (1 + 2 + 3) and the right sum of numbers is also 6 (4 + 2)
+// e.g. input: [1, 2, 3, 0, 4, 2] => output: 1; input: [1, 3, 4, 3] => output: 0
+export const isBalanced = (arr) => {
+  let rightSum = 0;
+  let leftSum = 0;
+  arr.forEach(num => rightSum += num);
+  rightSum -= arr[0];
+
+  for (let i = 1; i < arr.length; i++) {
+    rightSum -= arr[i];
+    leftSum += arr[i - 1];
+    if (rightSum === leftSum) return 1;
+  }
+  return 0;
+}
+
+// Given an array of strings, for each string compare all suffixes (including the original string) with the original string and return a count for the number of equal characters both the suffix and the original string have have in order. See examples.
+// e.g. ["ababaa"] => "ababaa" (6), "babaa" (0), "abaa" (3), "baa" (0), "aa" (1), "a" (1) => 6 + 0 + 3 + 0 + 1 + 1 = 11
+// where 6, 0, 3, 0, 1, 1 are the number of equal characters that both the original string ("ababaa") and the current suffix string ("ababaa", "babaa", ...) have in order.
+// e.g. ["aa"] => "aa" (2), "a" (1) => 2 + 1 = 3
+// e.g. input: ["ababaa", "aa"] => output: [11, 3]
+export const findCommonChar = (arr) => {
+  let returnArr = [];
+  arr.forEach(str => {
+    let count = 0;
+    for (let suffixStr = str; suffixStr.length > 0; suffixStr = suffixStr.slice(1)) {
+      for (let i = 0; i < suffixStr.length; i++) {
+        if (suffixStr.charAt(i) === str.charAt(i)) {
+          count++;
+        } else {
+          break;
+        }
+      }
+    }
+    returnArr.push(count);
+  });
+  return returnArr;
+}
