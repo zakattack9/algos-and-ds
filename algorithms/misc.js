@@ -71,7 +71,7 @@ export const repeatedSubstringPattern = (str) => {
 // Given an array check if at any index i, the sum of numbers to the left of i is equal to the sum of numbers to the right of i where i is exclusive of both left and right sum calculations; return 1 if there exists such index, else return 0
 // e.g. given [1, 2, 3, 9, 4, 2] at index 3 the left sum of numbers is 6 (1 + 2 + 3) and the right sum of numbers is also 6 (4 + 2)
 // e.g. input: [1, 2, 3, 0, 4, 2] => output: 1; input: [1, 3, 4, 3] => output: 0
-export const isBalanced = (arr) => {
+export const isBalanced = (arr) => { // GoDaddy
   let rightSum = 0;
   let leftSum = 0;
   arr.forEach(num => rightSum += num);
@@ -90,7 +90,7 @@ export const isBalanced = (arr) => {
 // where 6, 0, 3, 0, 1, 1 are the number of equal characters that both the original string ("ababaa") and the current suffix string ("ababaa", "babaa", ...) have in order.
 // e.g. ["aa"] => "aa" (2), "a" (1) => 2 + 1 = 3
 // e.g. input: ["ababaa", "aa"] => output: [11, 3]
-export const findCommonChar = (arr) => {
+export const findEqualChars = (arr) => { // GoDaddy
   let returnArr = [];
   arr.forEach(str => {
     let count = 0;
