@@ -5,10 +5,7 @@ const BFS = (root) => {
 
   let queue = [root];
   while (queue.length > 0) {
-    // grab queue length (tree level length) before any elements are dequeued
-    const treeLevelLength = queue.length;
-    // loop through and queue each node at a single tree level
-    for (let i = 0; i < treeLevelLength; i++) {
+    for (let i = 0; i < queue.length; i++) {
       const head = queue.shift();
       traversal.push(head.value);
       if (head.left) queue.push(head.left);
@@ -27,7 +24,9 @@ export const BFSRightSide = (root) => {
 
   let queue = [root];
   while (queue.length > 0) {
+    // grab queue length (tree level length) before any elements are dequeued
     const treeLevelLength = queue.length;
+    // loop through and queue each node at a single tree level
     for (let i = 0; i < treeLevelLength; i++) {
       const head = queue.shift();
       // check if we have looped to the last element of a tree level
