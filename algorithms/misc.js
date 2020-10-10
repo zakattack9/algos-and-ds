@@ -136,3 +136,35 @@ export const productExceptSelf = (nums) => {
   }
   return output;
 };
+
+// print all root to leaf node paths of a given tree O(N)
+export const binaryTreePaths = (root) => {
+  let result = [];
+  const dfs = (root, curr) => {
+    if (!root) return;
+    if (!root.left && !root.right) {
+      curr += root.val;
+      result.push(curr);
+      return;
+    }
+    curr += root.val + '->';
+    dfs(root.left, curr);
+    dfs(root.right, curr);
+  }
+  dfs(root, '');
+  return result;
+};
+
+// given a sorted array create a balanced binary search tree O(N)
+export const sortedArrayToBST = (nums) => {
+  if (!nums.length) return null;
+  const construct = (left, right) => {
+    if (left > right) return null;
+    const mid = left + Math.floor((right - left) / 2);
+    let node = new TreeNode(nums[mid]);
+    node.left = construct(left, mid - 1);
+    node.right = construct(mid + 1, right);
+    return node;
+  }
+  return construct(0, nums.length - 1);
+};
