@@ -28,7 +28,7 @@ const swap = (arr, firstIndex, secondIndex) => {
 
 export default Quicksort;
 
-// even simpler partition where i keeps track of the next index to swap numbers less than pivot or the pivot itself
+// modified partition where i keeps track of the next index to swap numbers less than pivot or the pivot itself
 const Partition2 = (arr, low, high) => {
   const pivot = arr[high];
   let i = low; 
