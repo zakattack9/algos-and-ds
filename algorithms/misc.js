@@ -119,16 +119,17 @@ export const findEqualChars = (arr) => { // GoDaddy
 
 // given an array of nums, calculate the product of the array for every element excluding itself and return the products in an array
 // e.g.input: [1, 2, 3, 3] => output: [12, 9, 6, 6] where 12 = 2 * 3 * 3, 9 = 1 * 3 * 3, 6 = 1 * 2 * 3, 6 = 1 * 2 * 3
+// in solution below, forwardArray = [1, 1, 2, 6] and reverseArray = [,9, 3, 1]
 export const productExceptSelf = (nums) => {
   let forwardArray = new Array(nums.length);
   let reverseArray = new Array(nums.length);
   forwardArray[0] = 1
   reverseArray[nums.length - 1] = 1
   let output = [];
-  for (let i = 1; i < nums.length; i++) {
+  for (let i = 1; i < nums.length; i++) { // i = 1
     forwardArray[i] = nums[i - 1] * forwardArray[i - 1];
   }
-  for (let j = nums.length - 2; j >= 0; j--) {
+  for (let j = nums.length - 2; j >= 0; j--) { // j = 2
     reverseArray[j] = nums[j + 1] * reverseArray[j + 1];
   }
   for (let k = 0; k < nums.length; k++) {
