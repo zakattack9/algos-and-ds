@@ -171,6 +171,7 @@ export const sortedArrayToBST = (nums) => {
 };
 
 // given an integer, reverse the digits of the integer without using strings
+// this would be a good program to do in Java since you could use type int and not have to worry about decimal places when dividing the number by 10 allowing for shorter code
 export const reverseInteger = (num) => {
   const isNegative = num < 0 ? true : false;
   if (isNegative) num *= -1;
