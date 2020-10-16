@@ -169,3 +169,20 @@ export const sortedArrayToBST = (nums) => {
   }
   return construct(0, nums.length - 1);
 };
+
+// given an integer, reverse the digits of the integer without using strings
+export const reverseInteger = (num) => {
+  const isNegative = num < 0 ? true : false;
+  if (isNegative) num *= -1;
+  
+  let numLength = 0;
+  for (let i = 1; num / i >= 1; i *= 10) numLength++;
+  
+  let reversedNum = 0;
+  for (let i = 0; i < numLength; i++) {
+    const currDigit = num % Math.pow(10, i + 1) - num % Math.pow(10, i);
+    reversedNum += currDigit / Math.pow(10, i) * Math.pow(10, numLength - 1 - i);
+  }
+  
+  return isNegative ? reversedNum * -1 : reversedNum;
+}
