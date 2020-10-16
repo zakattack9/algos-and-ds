@@ -187,3 +187,14 @@ export const reverseInteger = (num) => {
   
   return isNegative ? reversedNum * -1 : reversedNum;
 }
+
+// shorter reverseInteger algorithm that works only for non-negative numbers; leverages parseInt() to ignore decimal places
+// works by always "removing" the last digit of num and adding it to a "left shifted" reversedNum
+export const reverseInteger = (num) => {
+  let reversedNum = 0; 
+  while (num >= 1) { 
+    reversedNum = reversedNum * 10 + num % 10; 
+    num = parseInt(num / 10); 
+  }
+  return reversedNum;
+}
