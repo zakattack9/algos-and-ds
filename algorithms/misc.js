@@ -155,3 +155,32 @@ export const binaryTreePaths = (root) => {
   dfs(root, '');
   return result;
 };
+
+// given an integer, reverse the digits of the integer without using strings
+// this would be a good program to do in Java since you could use type int and not have to worry about decimal places when dividing the number by 10 allowing for shorter code
+export const reverseInteger = (num) => {
+  const isNegative = num < 0 ? true : false;
+  if (isNegative) num *= -1;
+  
+  let numLength = 0;
+  for (let i = 1; num / i >= 1; i *= 10) numLength++;
+  
+  let reversedNum = 0;
+  for (let i = 0; i < numLength; i++) {
+    const currDigit = num % Math.pow(10, i + 1) - num % Math.pow(10, i);
+    reversedNum += currDigit / Math.pow(10, i) * Math.pow(10, numLength - 1 - i);
+  }
+  
+  return isNegative ? reversedNum * -1 : reversedNum;
+}
+
+// shorter reverseInteger algorithm that works only for non-negative numbers; leverages parseInt() to ignore decimal places
+// works by always "removing" the last digit of num and adding it to a "left shifted" reversedNum
+export const reverseInteger = (num) => {
+  let reversedNum = 0; 
+  while (num >= 1) { 
+    reversedNum = reversedNum * 10 + num % 10; 
+    num = parseInt(num / 10); 
+  }
+  return reversedNum;
+}
