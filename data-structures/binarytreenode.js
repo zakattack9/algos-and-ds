@@ -22,3 +22,17 @@ export const buildBinaryTree = (arr, i = 0, root = null) => {
   // console.log("RETURNING ROOT", root)
   return root;
 }
+
+// given a sorted array create a balanced binary search tree O(N)
+export const sortedArrayToBST = (nums) => {
+  if (!nums.length) return null;
+  const construct = (left, right) => {
+    if (left > right) return null;
+    const mid = left + Math.floor((right - left) / 2);
+    let node = new BinaryTreeNode(nums[mid]);
+    node.left = construct(left, mid - 1);
+    node.right = construct(mid + 1, right);
+    return node;
+  }
+  return construct(0, nums.length - 1);
+};
