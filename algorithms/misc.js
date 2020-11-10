@@ -59,9 +59,7 @@ export const repeatedSubstringPattern = (str) => {
     while (j > 0 && str[i] !== str[j]) {
       j = dp[j - 1];
     }
-    if (str[i] === str[j]) {
-      j++;
-    }
+    if (str[i] === str[j]) j++;
     dp[i] = j;
   }
   const l = dp[str.length - 1];
@@ -183,4 +181,21 @@ export const reverseInteger = (num) => {
     num = parseInt(num / 10); 
   }
   return reversedNum;
+}
+
+// find the maximum depth of a binary tree given its root
+export const maxDepth = (root) => {
+  if(root == NULL) return 0;
+
+  let leftNode = maxDepth(root.left);
+  let rightNode = maxDepth(root.right);
+  return max(leftNode,rightNode) + 1;
+}
+
+// given a non-empty array of integers, every element appears twice except for one; find that single one
+// works by using XOR since ((A XOR B) XOR B) = A
+export const singleNumber = (nums) => {
+  let result = 0;
+  for (num of nums) result ^= num;
+  return result;
 }
